@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khushbu Bhadauria | Portfolio</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1a1f2e; /* deep navy */
+      color: #dcdcdc; /* soft light gray */
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+    header {
+      background: #2b3047; /* dark slate blue */
+      padding: 60px 20px;
+      border-radius: 20px;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2);
+      color: #f0e6d2; /* warm ivory */
+      animation: fadeIn 1.5s ease forwards;
+    }
+    header img {
+      width: 140px;
+      border-radius: 50%;
+      border: 5px solid #d4af37; /* muted gold */
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+      animation: float 4s ease-in-out infinite;
+      margin-bottom: 20px;
+      background: transparent;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-shadow: 0 3px 8px rgba(212, 175, 55, 0.7);
+      color: #d4af37; /* gold accent */
+    }
+    header p {
+      font-size: 1.15rem;
+      color: #c7c3b5;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+      line-height: 1.5;
+    }
+    nav {
+      margin: 40px 0 30px;
+      width: 90%;
+      max-width: 700px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      background: #22283f; /* navy gray */
+      padding: 12px 0;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 50px;
+      color: #dcdcdc;
+      background: transparent;
+      transition: background 0.3s ease, color 0.3s ease;
+      font-size: 1.1rem;
+      letter-spacing: 1.1px;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: #d4af37; /* gold */
+      color: #1a1f2e; /* navy background */
+      box-shadow: 0 0 20px #d4af37;
+    }
+    section {
+      width: 90%;
+      max-width: 700px;
+      margin-bottom: 50px;
+      background: #2b3047; /* dark slate blue */
+      padding: 25px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.1);
+      color: #c7c3b5;
+      animation: fadeUp 1s ease forwards;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      letter-spacing: 3px;
+      color: #d4af37; /* gold */
+      text-transform: uppercase;
+      text-shadow: 0 1px 5px #665923;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .skill {
+      background: #d4af37; /* gold */
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      color: #1a1f2e; /* navy */
+    }
+    .skill:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.9);
+    }
+    .project {
+      background: #1f2340;
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      color: #dcdcdc;
+    }
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.7);
+    }
+    .project h3 {
+      color: #d4af37;
+      margin-bottom: 12px;
+      letter-spacing: 1.2px;
+    }
+    #about p {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #c7c3b5;
+      letter-spacing: 0.6px;
+    }
+    #contact p {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      color: #c7c3b5;
+    }
+    #contact a {
+      color: #d4af37;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    #contact a:hover {
+      color: #f5deb3;
+      text-decoration: underline;
+    }
+    footer {
+      color: #9e945d;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      text-align: center;
+      user-select: none;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeUp {
+      0% {opacity: 0; transform: translateY(25px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @media (max-width: 768px) {
+      header, section, nav {
+        width: 95%;
+      }
+      nav {
+        gap: 15px;
+      }
+      .skills {
+        flex-direction: column;
+        align-items: center;
+      }
+      .skill {
+        width: 70%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="home">
+    <img src="https://imgs.search.brave.com/vWTY_NZSoSXEcNO82WUUew3k88VjNee150uYBiawHFU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9j/dXRlLWNhcnRvb24t/a2lkLXBvc2luZy1w/b3J0cmFpdF8yMy0y/MTUxODcwNTkwLmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA" alt="Profile Picture" />
+    <h1>Khushbu Bhadauria</h1>
+    <p>I'm a passionate Full Stack Developer specializing in React, Java with Spring Boot, C, and SQL. I build scalable, efficient web applications with clean, maintainable code. Constantly learning and evolving, I strive to deliver seamless digital experiences that solve real-world problems.</p>
+  </header>
+
+  <nav>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React.js</div>
+      <div class="skill">Java with Spring Boot</div>
+      <div class="skill">C</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">REST APIs</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Personal Portfolio Website</h3>
+      <p>A modern and responsive portfolio website showcasing my skills, projects, and professional journey built with React and CSS.</p>
+    </div>
+    <div class="project">
+      <h3>Live Weather App</h3>
+      <p>A sleek weather application fetching real-time data from APIs, built using React and JavaScript for smooth user experience.</p>
+    </div>
+    <div class="project">
+      <h3>ChatBot AI</h3>
+      <p>An AI chatbot inspired by ChatGPT that handles conversations naturally, developed with Node.js and natural language processing libraries.</p>
+    </div>
+    <div class="project">
+      <h3>Souled Store Clone</h3>
+      <p>A fully functional e-commerce website mimicking the Souled Store with product listings, cart features, and checkout system.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Education & Experience</h2>
+    <p><strong>BCA in AIDA</strong><br>Oriental University, Indore (2022 – 2025)</p>
+    <p><strong>MCA (Currently Pursuing)</strong><br>Medi-Caps University, Indore (2025 – Present, 1st Year)</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:khushbubhadauria038@gmail.com">khushbubhadauria038@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/khushbu447" target="_blank">github.com/khushbu447</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/khushbubhadauria" target="_blank">linkedin.com/in/khushbubhadauria</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Khushbu Bhadauria. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
